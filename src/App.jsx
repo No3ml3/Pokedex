@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg"; */
 /* import "./App.css"; */
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const pokemonList = [
   {
@@ -43,6 +44,13 @@ function App() {
       setCount(count + 1);
     }
   };
+
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
+
+
+
   return (
     <>
       <div>
