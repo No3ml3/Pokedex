@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <div>
-        <NavBar count={count} setCount={setCount} length={pokemonList.length}/>
+        <NavBar setCount={setCount} pokemonList={pokemonList} />
         <PokemonCard pokemon={pokemonList[count]} />
       </div>
     </>
