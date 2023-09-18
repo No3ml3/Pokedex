@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 
 function PokemonCard({pokemon}) {
+
+const sayName = (name) => {
+  if (name === "pikachu"){
+    alert("pika pikachu !!!")
+  }
+}
+
   return (
     <figure>
       {pokemon.imgSrc === undefined ? (
@@ -9,6 +16,7 @@ function PokemonCard({pokemon}) {
         <img src={pokemon.imgSrc} alt={pokemon.name + " picture"} />
       )}
       <figcaption>{pokemon.name}</figcaption>
+      {sayName(pokemon.name)} 
     </figure>
   );
 }
