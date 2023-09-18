@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg"; */
 /* import "./App.css"; */
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -33,34 +34,18 @@ const pokemonList = [
 ];
 
 function App() {
+
   const [count, setCount] = useState(0);
-  const beforeButton = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
-  const afterButton = () => {
-    if (count < pokemonList.length - 1) {
-      setCount(count + 1);
-    }
-  };
 
   useEffect(() => {
     alert("hello pokemon trainer :)");
   }, []);
 
-
-
   return (
     <>
       <div>
+        <NavBar count={count} setCount={setCount} length={pokemonList.length}/>
         <PokemonCard pokemon={pokemonList[count]} />
-        {count > 0 ? <button onClick={beforeButton}>before</button> : ""}
-        {count < pokemonList.length - 1 ? (
-          <button onClick={afterButton}>After</button>
-        ) : (
-          ""
-        )}
       </div>
     </>
   );
